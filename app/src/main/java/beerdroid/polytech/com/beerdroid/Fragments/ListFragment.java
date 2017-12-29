@@ -11,7 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import beerdroid.polytech.com.beerdroid.R;
 import beerdroid.polytech.com.beerdroid.Services.IntentServiceDetails;
@@ -31,6 +34,14 @@ public class ListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        String imageUrl = "https://i.imgur.com/tGbaZCY.jpg";
+
+        Context c = getActivity().getApplicationContext();
+        View myFragmentView = inflater.inflate(R.layout.list_layout, container, false);
+
+        ImageView imageView = (ImageView) myFragmentView.findViewById(R.id.imageView);
+        Picasso.with(c).load(imageUrl).into(imageView);
+
         return inflater.inflate(R.layout.list_layout, container, false);
     }
 
@@ -61,7 +72,7 @@ public class ListFragment extends Fragment {
 
     private void getDetails(){
         Intent msgIntent = new Intent(this.getContext(), IntentServiceDetails.class);
-        msgIntent.putExtra(IntentServiceDetails.PARAM_IN_MSG, IntentServiceDetails.ACTION_VALUE_GET_QUESTION);
+        msgIntent.putExtra(IntentServiceDetails.PARAM_IN_MSG, IntentServiceDetails.ACTION_VALUE_GET_DETAILS);
         this.getContext().startService(msgIntent);
     }
 
