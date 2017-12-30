@@ -100,6 +100,7 @@ public class ListFragment extends Fragment {
         String url = "https://api.punkapi.com/v2/beers?page=" + this.page;
 
         final RelativeLayout progressBar = (RelativeLayout) getActivity().findViewById(R.id.loadMoreItemsProgressBar);
+        final RelativeLayout progressBarStart = (RelativeLayout) getActivity().findViewById(R.id.loadItemsProgressBar);
         progressBar.setVisibility(View.VISIBLE);
 
         JsonArrayRequest jsArrRequest = new JsonArrayRequest
@@ -161,6 +162,7 @@ public class ListFragment extends Fragment {
                             }
                         });
                         progressBar.setVisibility(View.GONE);
+                        progressBarStart.setVisibility(View.GONE);
                     }
                 }, new Response.ErrorListener() {
 
@@ -175,6 +177,7 @@ public class ListFragment extends Fragment {
                             beersList.setAdapter(adapter);
                         }
                         progressBar.setVisibility(View.GONE);
+                        progressBarStart.setVisibility(View.GONE);
                     }
                 });
         queue.add(jsArrRequest);
