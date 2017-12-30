@@ -2,18 +2,18 @@
 
 __Android Application Development Project - Polytech Lyon 5A Initiale__
 
-*Students*
+_*Students*
 
 GONDRAS Pierre-Louis / PARIS Franck
 
-*Selected workflow*
+_*Selected workflow*
 
 Github Flow
 
-*Subject*
+_*Subject*
 
 Free API access and details display of beers from the whole world.
 
-*Libs*
+_*Libs*
 
 insert useful libs here
