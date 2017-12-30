@@ -4,55 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="beerdroid.polytech.com.beerdroid.Activities.MainActivity"
-    android:padding="20dp">
+    tools:context="beerdroid.polytech.com.beerdroid.Activities.MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="#AAA"
-        />
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="80dip"
-        android:paddingRight="20dip"
-        android:paddingTop="20dip"
-        android:paddingBottom="20dip"
-        tools:context="beerdroid.polytech.com.beerdroid.Activities.MainActivity">
-
-        <Button
-            android:id="@+id/queryButton"
+        <ListView
+            android:id="@+id/beer_list"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
-            android:text="Refresh"/>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:indeterminate="true"
-                android:layout_centerHorizontal="true"
-                android:visibility="gone" />
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/responseView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </ScrollView>
-        </RelativeLayout>
-    </LinearLayout>
+            android:layout_height="wrap_content" />
 
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -5,4 +5,177 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="beerdroid.polytech.com.beerdroid.Activities.MainActivity"
-    android:padding="20dp"/>
+    android:padding="12dp" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/beerImg"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                tools:src="#AAA" />
+
+            <TextView
+                android:id="@+id/beerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/beerImg"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/beerImg"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                tools:text="Beer" />
+
+            <TextView
+                android:id="@+id/beerTagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/primary_text_light"
+                android:layout_alignStart="@+id/beerName"
+                android:layout_below="@+id/beerName"
+                android:textSize="18sp"
+                tools:text="Tagline of the beer" />
+
+            <TextView
+                android:id="@+id/beerContributed_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/secondary_text_light"
+                android:layout_alignStart="@+id/beerName"
+                android:layout_below="@+id/beerTagline"
+                android:textSize="15sp"
+                tools:text="Contributed by" />
+
+            <TextView
+                android:id="@+id/beerFirst_brewed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textColor="@android:color/secondary_text_light"
+                android:layout_alignStart="@+id/beerName"
+                android:layout_below="@+id/beerContributed_by"
+                android:textSize="12sp"
+                tools:text="Since 11/1974" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+            <TextView
+                android:id="@+id/beerDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="18sp"
+                tools:text="Complete description of the beer" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+            <TextView
+                android:id="@+id/beerBrewers_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="15sp"
+                tools:text="Brewers tips" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/beerIngredientsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="18sp"
+                tools:text="Ingredients" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+                    <TextView
+                        android:id="@+id/beerIngredientsMaltTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/primary_text_light"
+                        android:textSize="15sp"
+                        tools:text="Malt" />
+
+                    <TextView
+                        android:id="@+id/beerIngredientsMalt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:layout_below="@+id/beerIngredientsMaltTitle"
+                        android:textColor="@android:color/primary_text_light"
+                        tools:text="list\nlist\nlist" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+                    <TextView
+                        android:id="@+id/beerIngredientsHopsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/primary_text_light"
+                        android:textSize="15sp"
+                        tools:text="Hops" />
+
+                    <TextView
+                        android:id="@+id/beerIngredientsHops"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:layout_below="@+id/beerIngredientsHopsTitle"
+                        android:textColor="@android:color/primary_text_light"
+                        tools:text="list\nlist\nlist" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/beerIngredientsYeast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="15sp"
+                tools:text="Yeast : a yeast" />
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
