@@ -1,9 +1,6 @@
 package beerdroid.polytech.com.beerdroid.Fragments;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,19 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,7 +28,6 @@ import java.util.List;
 import beerdroid.polytech.com.beerdroid.Adapters.BeerAdapter;
 import beerdroid.polytech.com.beerdroid.Objects.Beer;
 import beerdroid.polytech.com.beerdroid.R;
-import beerdroid.polytech.com.beerdroid.Services.IntentServiceDetails;
 
 /**
  * Created by franck on 26/12/17.
@@ -49,7 +40,7 @@ public class ListFragment extends Fragment {
     private ListInterface myInterface;
 
     public interface ListInterface{
-        void detailsClick();
+        void detailsClick(int pos, List<Beer> beers);
     }
 
     @Override
@@ -64,7 +55,7 @@ public class ListFragment extends Fragment {
         try{
             myInterface = (ListInterface) context;
         } catch(ClassCastException e){
-            Log.d("test", "Context must implement HomeInterface");
+            Log.d("test", "Context must implement ListInterface");
         }
     }
 
@@ -74,34 +65,6 @@ public class ListFragment extends Fragment {
 
         this.beersList = (ListView) getActivity().findViewById(R.id.beer_list);
         printBeers();
-
-//        Button button = (Button) getActivity().findViewById(R.id.queryButton);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                if(myInterface != null){
-//                    myInterface.detailsClick();
-//                    getDetails();
-//                }
-//            }
-//        });
-    }
-
-    private void getDetails(){
-        Intent msgIntent = new Intent(this.getContext(), IntentServiceDetails.class);
-        msgIntent.putExtra(IntentServiceDetails.PARAM_IN_MSG, IntentServiceDetails.ACTION_VALUE_GET_DETAILS);
-        this.getContext().startService(msgIntent);
-    }
-
-    public class ResponseReceiver extends BroadcastReceiver {
-        public static final String ACTION_RESP =
-                "com.mamlambo.intent.action.MESSAGE_PROCESSED";
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-//            TextView result = (TextView) getActivity().findViewById(R.id.responseView);
-//            String text = intent.getStringExtra(IntentServiceDetails.PARAM_OUT_MSG);
-//            result.setText(text);
-        }
     }
 
     private void printBeers(){
@@ -158,8 +121,7 @@ public class ListFragment extends Fragment {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 if(myInterface != null){
-                                    myInterface.detailsClick();
-                                    getDetails();
+                                    myInterface.detailsClick(position, beers);
                                 }
                             }
                         });

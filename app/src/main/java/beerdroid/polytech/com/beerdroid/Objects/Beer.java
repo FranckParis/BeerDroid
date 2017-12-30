@@ -1,11 +1,13 @@
 package beerdroid.polytech.com.beerdroid.Objects;
 
 
+import java.io.Serializable;
+
 /**
  * Created by Menros on 29/12/2017.
  */
 
-public class Beer {
+public class Beer implements Serializable {
     private int id;
     private String name;
     private String tagline;

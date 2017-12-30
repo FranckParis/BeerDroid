@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import beerdroid.polytech.com.beerdroid.Objects.Beer;
 import beerdroid.polytech.com.beerdroid.R;
 
 public class DetailsFragment extends Fragment {
@@ -17,5 +18,10 @@ public class DetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.details_layout, container, false);
+    }
+
+    public void getDetailsSelectedBeer(){
+        Bundle bundle = getArguments();
+        Beer beer = (Beer) bundle.getSerializable("beer");
     }
 }
