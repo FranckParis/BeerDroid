@@ -20,7 +20,7 @@
                 android:id="@+id/beerImg"
                 android:layout_width="100dp"
                 android:layout_height="150dp"
-                tools:src="#AAA" />
+                android:src="#AAA" />
 
             <TextView
                 android:id="@+id/beerName"
@@ -33,7 +33,7 @@
                 android:textColor="@android:color/primary_text_light"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                tools:text="Beer" />
+                android:text="Beer" />
 
             <TextView
                 android:id="@+id/beerTagline"
@@ -44,7 +44,7 @@
                 android:layout_alignStart="@+id/beerName"
                 android:layout_below="@+id/beerName"
                 android:textSize="18sp"
-                tools:text="Tagline of the beer" />
+                android:text="Tagline of the beer" />
 
             <TextView
                 android:id="@+id/beerContributed_by"
@@ -54,7 +54,7 @@
                 android:layout_alignStart="@+id/beerName"
                 android:layout_below="@+id/beerTagline"
                 android:textSize="15sp"
-                tools:text="Contributed by" />
+                android:text="Contributed by" />
 
             <TextView
                 android:id="@+id/beerFirst_brewed"
@@ -66,7 +66,7 @@
                 android:layout_alignStart="@+id/beerName"
                 android:layout_below="@+id/beerContributed_by"
                 android:textSize="12sp"
-                tools:text="Since 11/1974" />
+                android:text="Since 11/1974" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/primary_text_light"
                 android:textSize="18sp"
-                tools:text="Complete description of the beer" />
+                android:text="Complete description of the beer" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/primary_text_light"
                 android:textSize="15sp"
-                tools:text="Brewers tips" />
+                android:text="Brewers tips" />
         </RelativeLayout>
 
         <LinearLayout
@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/primary_text_light"
                 android:textSize="18sp"
-                tools:text="Ingredients" />
+                android:text="Ingredients" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -127,7 +127,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/primary_text_light"
                         android:textSize="15sp"
-                        tools:text="Malt" />
+                        android:text="Malt" />
 
                     <TextView
                         android:id="@+id/beerIngredientsMalt"
@@ -137,7 +137,7 @@
                         android:paddingEnd="0dp"
                         android:layout_below="@+id/beerIngredientsMaltTitle"
                         android:textColor="@android:color/primary_text_light"
-                        tools:text="list\nlist\nlist" />
+                        android:text="list\nlist\nlist" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -152,7 +152,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/primary_text_light"
                         android:textSize="15sp"
-                        tools:text="Hops" />
+                        android:text="Hops" />
 
                     <TextView
                         android:id="@+id/beerIngredientsHops"
@@ -162,19 +162,19 @@
                         android:paddingEnd="0dp"
                         android:layout_below="@+id/beerIngredientsHopsTitle"
                         android:textColor="@android:color/primary_text_light"
-                        tools:text="list\nlist\nlist" />
+                        android:text="list\nlist\nlist" />
                 </RelativeLayout>
             </LinearLayout>
 
             <TextView
-                android:id="@+id/beerIngredientsYeast"
+                android:id="@+id/beerIngredientYeast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
                 android:paddingEnd="0dp"
                 android:textColor="@android:color/primary_text_light"
                 android:textSize="15sp"
-                tools:text="Yeast : a yeast" />
+                android:text="Yeast : a yeast" />
 
         </LinearLayout>
     </LinearLayout>

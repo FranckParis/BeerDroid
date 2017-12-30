@@ -9,14 +9,23 @@
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        android:layout_height="match_parent">
 
         <ListView
             android:id="@+id/beer_list"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <!-- include progress layout that will be displayed while loading more data -->
+        <!-- initially it is hidden -->
+
+        <include
+            android:id="@+id/loadMoreItemsProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/beer_list"
+            layout="@layout/progress_layout"
+            android:visibility="gone"/>
 
     </RelativeLayout>
 
