@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements ListFragment.List
         newFragment.setArguments(bundle);
 
         transaction.replace(R.id.fragment_container, newFragment);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 }
